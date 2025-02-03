@@ -1,0 +1,33 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore logs and cache
+logs/
+*.log
+
+# Ignore audio recordings and models
+speech.wav
+models/
+
+# Ignore environment config files
+.env
+config.json
+
+# Ignore dependency caches
+pip-log.txt
+dist/
+build/
+*.egg-info/
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.iml
