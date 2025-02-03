@@ -11,7 +11,7 @@ class AIModel:
         """Send a request to the Llama.cpp server instead of running CLI."""
         payload = {
             "prompt": f"Question: '{transcript}'\nAnswer:",
-            "n_predict": 120,  # Shorter responses improve speed
+            "n_predict": 150,  # Shorter responses improve speed
             "temperature": 0.7,  # Balanced creativity vs. deterministic output
             "top_k": 40,  # Limits sampling to top 40 tokens for efficiency
             "top_p": 0.8,  # Avoids unnecessary token sampling
