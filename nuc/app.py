@@ -1,6 +1,6 @@
 from fastapi import FastAPI, File, UploadFile
 import shutil
-from transcription import Transcriber
+from nuc.transcription import Transcriber
 
 app = FastAPI()
 transcriber = Transcriber()  # Load Whisper model once
