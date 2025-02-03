@@ -1,3 +1,4 @@
+import os
 import pyaudio
 import webrtcvad
 import wave
@@ -6,12 +7,12 @@ import time
 # Audio settings
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
-RATE = 16000  # Whisper performs best at 16kHz
-FRAME_DURATION = 20  # Frame size: 10, 20, or 30 ms
+RATE = 16000  # Whisper works best at 16kHz
+FRAME_DURATION = 20  # Frame size in milliseconds (10, 20, or 30)
 FRAME_SIZE = int(RATE * (FRAME_DURATION / 1000))  # 320 samples for 20ms
 
 VAD_MODE = 1  # Less aggressive VAD (0-3)
-SILENCE_TOLERANCE = 2.0  # Wait 2 seconds of silence before stopping
+SILENCE_TOLERANCE = 2.0  # Allow 3 seconds of silence before stopping
 
 class AudioCapture:
     def __init__(self):
@@ -28,8 +29,11 @@ class AudioCapture:
         """Check if the audio frame contains speech."""
         return self.vad.is_speech(frame, RATE)
 
-    def record_audio(self, output_filename="speech.wav"):
+    def record_audio(self, output_filename=None):
         """Records audio while speech is detected, with a silence buffer."""
+        if output_filename is None:
+            output_filename = os.path.join(os.path.dirname(__file__), "speech.wav")
+
         frames = []
         silent_chunks = 0
         max_silent_chunks = int(SILENCE_TOLERANCE * (1000 / FRAME_DURATION))  # Convert sec to frames
