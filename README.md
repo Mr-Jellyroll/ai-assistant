@@ -24,11 +24,11 @@ Project consists of two main components:
 ---
 
 ## Features
-**Live Audio Processing** – Captures audio with WebRTC VAD
-**Speech-to-Text** – Uses OpenAI **Whisper (base model)**
-**AI Response Generation** – Powered by **Llama.cpp with Mistral 7B**
-**Real-Time GUI** – Displays transcriptions & AI-generated responses
-**Optimized for Low Latency** – Uses **quantized GGUF models (Q4_K_M)** for speed
+- **Live Audio Processing** – Captures audio with WebRTC VAD
+- **Speech-to-Text** – Uses OpenAI **Whisper (base model)**
+- **AI Response Generation** – Powered by **Llama.cpp with Mistral 7B**
+- **Real-Time GUI** – Displays transcriptions & AI-generated responses
+- **Optimized for Low Latency** – Uses **quantized GGUF models (Q4_K_M)** for speed
 
 ## LLM & NLP Technologies Used
 - Whisper (Speech-to-Text) Model: Whisper Base
