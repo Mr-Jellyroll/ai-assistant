@@ -4,7 +4,7 @@
 The AI Assistant is a real-time system that:
 - Listens to speech using WebRTC VAD.
 - Transcribes speech to text using OpenAI Whisper.
-- Generates AI-driven interview responses using Llama.cpp with Mistral 7B.
+- Generates AI-driven responses using Llama.cpp with Mistral 7B.
 - Displays results in a GUI for real-time interaction.
 
 ## System Architecture
